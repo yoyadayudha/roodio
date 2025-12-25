@@ -6,8 +6,8 @@ document.addEventListener('DOMContentLoaded', function () {
         return;
     }
 
-    canvasDiv.style.width = 'inherit';
-    canvasDiv.style.height = 'inherit';
+    canvasDiv.style.width = '100%';
+    canvasDiv.style.height = '100%';
     canvasDiv.classList.add('absolute', 'z-1');
 
     const options = {
