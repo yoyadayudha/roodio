@@ -12,8 +12,8 @@
         <div class='w-72 mb-1 md:w-80'>
             <img src="{{ asset("assets/404.png") }}" alt="404">
         </div>
-        <div class='font-secondaryAndButton text-small text-white text-center md:text-justify md:ml-8 md:text-body'>
-            <p class='font-primary text-body font-bold text-warning-lighten mb-1 md:text-paragraph'>404 | Page Not Found</p>
+        <div class='font-secondaryAndButton text-small text-white text-center md:text-justify md:ml-8 md:text-body-size'>
+            <p class='font-primary text-body-size font-bold text-warning-lighten mb-1 md:text-paragraph'>404 | Page Not Found</p>
             <p>The server couldn't find the webpage or resource you requested.</p>
         </div>
     </div>

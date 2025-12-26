@@ -12,8 +12,8 @@
         <div class='w-72 mb-1 md:w-80'>
             <img src="{{ asset("assets/503.png") }}" alt="503">
         </div>
-        <div class='font-secondaryAndButton text-small text-white text-center md:text-justify md:ml-8 md:text-body'>
-            <p class='font-primary text-body font-bold text-warning-lighten mb-1 md:text-paragraph'>503 | Service Unavailable</p>
+        <div class='font-secondaryAndButton text-small text-white text-center md:text-justify md:ml-8 md:text-body-size'>
+            <p class='font-primary font-bold text-warning-lighten text-body-size mb-1 md:text-paragraph'>503 | Service Unavailable</p>
             <p>Website is under construction or maintenance. Sorry for the inconvenient. We will back soon!</p>
         </div>
     </div>

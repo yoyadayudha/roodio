@@ -12,8 +12,8 @@
         <div class='w-72 mb-1 md:w-80'>
             <img src="{{ asset("assets/500.png") }}" alt="404">
         </div>
-        <div class='font-secondaryAndButton text-small text-white text-center md:text-justify md:ml-8 md:text-body'>
-            <p class='font-primary text-body font-bold text-warning-lighten mb-1 md:text-paragraph'>500 | Internal Server Error</p>
+        <div class='font-secondaryAndButton text-small text-white text-center md:text-justify md:ml-8 md:text-body-size'>
+            <p class='font-primary text-body-size font-bold text-warning-lighten mb-1 md:text-paragraph'>500 | Internal Server Error</p>
             <p>Oops, something went wrong. Try to refresh this page or feel free to contact us if the problem persists.</p>
         </div>
     </div>

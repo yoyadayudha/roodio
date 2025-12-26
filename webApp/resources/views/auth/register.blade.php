@@ -19,37 +19,37 @@
                 <img src="{{ asset('assets/logo-with-text.png') }}" alt="logo" class='w-24'>
                 <p class='font-primary text-subtitle font-bold tracking-widest text-primary-85'>SIGN UP</p>
             </div>
-            <p class='text-center text-primary-50 text-body mb-4 -mt-1.5'>Let's join for amazing experience!</p>
+            <p class='text-center text-primary-50 text-body-size mb-4 -mt-1.5'>Let's join for amazing experience!</p>
             <div>
                 <form action="" method="POST" id='identity'>
                     <div class='flex flex-col mb-7'>
-                        <label for="fullname" class='text-body flex flex-row mb-2'>
+                        <label for="fullname" class='text-body-size flex flex-row mb-2'>
                             <img src="{{ asset('assets/icon/name.svg') }}" alt="name" class='w-6 mr-1'>
-                            <p class='text-primary-85 text-body'>Fullname</p>
+                            <p class='text-primary-85 text-body-size'>Fullname</p>
                         </label>
-                        <input type="text" name="fullname" id="fullname" autocomplete="off" required placeholder="Ex: John Doe" class='not-placeholder-shown:bg-accent-20/60 not-placeholder-shown:text-shadedOfGray-100 text-small outline-none border-b rounded-md px-1.5 py-0.5 border-shadedOfGray-50 placeholder:text-micro placeholder:italic focus:border-amber-600 focus:border-b-2 focus:bg-secondary-happy-20/50 ease-in-out duration-150 hover:bg-shadedOfGray-20/90 md:text-body md:h-8 md:placeholder:text-small'>
+                        <input type="text" name="fullname" id="fullname" autocomplete="off" required placeholder="Ex: John Doe" class='not-placeholder-shown:bg-accent-20/60 not-placeholder-shown:text-shadedOfGray-100 text-small outline-none border-b rounded-md px-1.5 py-0.5 border-shadedOfGray-50 placeholder:text-micro placeholder:italic focus:border-amber-600 focus:border-b-2 focus:bg-secondary-happy-20/50 ease-in-out duration-150 hover:bg-shadedOfGray-20/90 md:text-body-size md:h-8 md:placeholder:text-small'>
                     </div>
                     <div class='flex flex-col mb-7'>
-                        <label for="email" class='text-body flex flex-row mb-2'>
+                        <label for="email" class='text-body-size flex flex-row mb-2'>
                             <img src="{{ asset('assets/icon/email.svg') }}" alt="email" class='w-6 mr-1'>
-                            <p class='text-primary-85 text-body'>Email</p>
+                            <p class='text-primary-85 text-body-size'>Email</p>
                         </label>
-                        <input type="email" name="email" id="email" autocomplete="off" required placeholder="Ex: john.doe@gmail.com" class='not-placeholder-shown:bg-accent-20/60 not-placeholder-shown:text-shadedOfGray-100 text-small outline-none border-b rounded-md px-1.5 py-0.5 border-shadedOfGray-50 placeholder:text-micro placeholder:italic focus:border-amber-600 focus:border-b-2 focus:bg-secondary-happy-20/50 ease-in-out duration-150 hover:bg-shadedOfGray-20/90 md:text-body md:h-8 md:placeholder:text-small'>
+                        <input type="email" name="email" id="email" autocomplete="off" required placeholder="Ex: john.doe@gmail.com" class='not-placeholder-shown:bg-accent-20/60 not-placeholder-shown:text-shadedOfGray-100 text-small outline-none border-b rounded-md px-1.5 py-0.5 border-shadedOfGray-50 placeholder:text-micro placeholder:italic focus:border-amber-600 focus:border-b-2 focus:bg-secondary-happy-20/50 ease-in-out duration-150 hover:bg-shadedOfGray-20/90 md:text-body-size md:h-8 md:placeholder:text-small'>
                     </div>
                     <div class='flex flex-row items-start justify-between'>
                         <div class='flex flex-col mb-7'>
-                            <label for="dob" class='text-body flex flex-row mb-2'>
+                            <label for="dob" class='text-body-size flex flex-row mb-2'>
                                 <img src="{{ asset('assets/icon/date.svg') }}" alt="email" class='w-6 mr-1'>
-                                <p class='text-primary-85 text-body'>Date of Birth</p>
+                                <p class='text-primary-85 text-body-size'>Date of Birth</p>
                             </label>
-                            <input datepicker id="default-datepicker" name='dob' type="text" autocomplete="off" required placeholder="mm-dd-yyyy" class="not-placeholder-shown:bg-accent-20/60 not-placeholder-shown:text-shadedOfGray-100 w-32 text-small outline-none border-b rounded-md px-1.5 py-0.5 border-shadedOfGray-50 placeholder:text-micro placeholder:italic focus:border-amber-600 focus:border-b-2 focus:bg-secondary-happy-20/50 ease-in-out duration-150 hover:bg-shadedOfGray-20/90 md:text-body md:h-8 md:placeholder:text-small">
+                            <input datepicker id="default-datepicker" name='dob' type="text" autocomplete="off" required placeholder="mm-dd-yyyy" class="not-placeholder-shown:bg-accent-20/60 not-placeholder-shown:text-shadedOfGray-100 w-32 text-small outline-none border-b rounded-md px-1.5 py-0.5 border-shadedOfGray-50 placeholder:text-micro placeholder:italic focus:border-amber-600 focus:border-b-2 focus:bg-secondary-happy-20/50 ease-in-out duration-150 hover:bg-shadedOfGray-20/90 md:text-body-size md:h-8 md:placeholder:text-small">
                         </div>
                         <div class='flex flex-col mb-7'>
-                            <label for="gender" class='text-body flex flex-row mb-2'>
+                            <label for="gender" class='text-body-size flex flex-row mb-2'>
                                 <img src="{{ asset('assets/icon/gender.svg') }}" alt="gender" class='w-6 mr-1'>
                                 <p class='text-primary-85'>Gender</p>
                             </label>
-                            <select name="gender" id="gender" class="gender-select w-40 mt-0.5 text-small outline-none border-b rounded-md px-1.5 py-0.5 border-shadedOfGray-50 text-shadedOfGray-60 italic focus:border-amber-600 focus:border-b-2 ease-in-out duration-150 hover:bg-shadedOfGray-20/90 md:text-body md:h-8">
+                            <select name="gender" id="gender" class="gender-select w-40 mt-0.5 text-small outline-none border-b rounded-md px-1.5 py-0.5 border-shadedOfGray-50 text-shadedOfGray-60 italic focus:border-amber-600 focus:border-b-2 ease-in-out duration-150 hover:bg-shadedOfGray-20/90 md:text-body-size md:h-8">
                                 <option value="" disabled hidden selected>Gender</option>
                                 <option value="male">Male</option>
                                 <option value="female">Female</option>
@@ -58,11 +58,11 @@
                         </div>
                     </div>
                     <div class='flex flex-col mb-7'>
-                        <label for="country" class='text-body flex flex-row mb-2'>
+                        <label for="country" class='text-body-size flex flex-row mb-2'>
                                 <img src="{{ asset('assets/icon/country.svg') }}" alt="country" class='w-6 mr-1'>
                                 <p class='text-primary-85'>Country</p>
                         </label>
-                        <select autocomplete="country" id="country" name="country" required class="country-select w-full mt-0.5 text-small outline-none border-b rounded-md px-1.5 py-0.5 border-shadedOfGray-50 text-shadedOfGray-60 italic focus:border-amber-600 focus:border-b-2 ease-in-out duration-150 hover:bg-shadedOfGray-20/90 md:text-body md:h-8">
+                        <select autocomplete="country" id="country" name="country" required class="country-select w-full mt-0.5 text-small outline-none border-b rounded-md px-1.5 py-0.5 border-shadedOfGray-50 text-shadedOfGray-60 italic focus:border-amber-600 focus:border-b-2 ease-in-out duration-150 hover:bg-shadedOfGray-20/90 md:text-body-size md:h-8">
                             <option value="" disabled hidden selected>Select your country...</option>
                             <option value="AF">Afghanistan</option>
                             <option value="AX">Åland Islands</option>
