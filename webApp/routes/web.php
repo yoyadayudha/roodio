@@ -6,7 +6,7 @@ use App\Http\Controllers\SongController;
 use App\Http\Controllers\ThreadController;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('errors/503');
 })->name('welcome');
 
 Route::get('/songs/create', [SongController::class, 'create'])->name('songs.create');
