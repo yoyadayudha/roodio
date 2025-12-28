@@ -21,7 +21,8 @@
 
 
 @section('content')
-    <form action="" method="POST" id='identity'>
+    <form action="{{ route('auth.register') }}" method="POST" id='identity'>
+        @csrf
         <div class='flex flex-col mb-6'>
             <label for="fullname" class='text-body-size flex flex-row mb-2'>
                 <img src="{{ asset('assets/icons/name.svg') }}" alt="name" class='w-6 mr-1'>

@@ -10,7 +10,7 @@
 
 
 @section('mainImage')
-    <<img src="{{ asset('assets/logo-with-text.png') }}" alt="logo" class='w-24 drop-shadow-sm drop-shadow-primary-50 identity-section account-section logo'>
+    <img src="{{ asset('assets/logo-with-text.png') }}" alt="logo" class='w-24 drop-shadow-sm drop-shadow-primary-50'>
 @endsection
 
 
@@ -21,7 +21,8 @@
 
 
 @section('content')
-    <form action="" method="POST" id='account'>
+    <form action="{{ route('auth.account') }}" method="POST" id='account'>
+        @csrf
         <div class='flex flex-col mb-6'>
             <label for="username" class='text-body-size flex flex-row mb-1'>
                 <img src="{{ asset('assets/icons/user.svg') }}" alt="username" class='w-6 mr-1'>
