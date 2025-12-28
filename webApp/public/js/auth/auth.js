@@ -16,3 +16,21 @@ btn.addEventListener("click", () => {
         input.type = 'password';
     }
 });
+
+// customize behaviour show password for register page
+const btnConfirm = document.getElementById("showPassConfirm");
+const altInput = document.getElementById("passwordConfirm");
+const altCloseEye = document.getElementById("eye-closed-pass-confirm");
+const altOpenEye = document.getElementById("eye-open-pass-confirm");
+
+btnConfirm.addEventListener("click", () => {
+    if (!altCloseEye.classList.contains(classChange)){
+        altCloseEye.classList.add(classChange);
+        altOpenEye.classList.remove(classChange);
+        altInput.type = 'text';
+    } else {
+        altCloseEye.classList.remove(classChange);
+        altOpenEye.classList.add(classChange);
+        altInput.type = 'password';
+    }
+});
