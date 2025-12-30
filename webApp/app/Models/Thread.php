@@ -34,4 +34,9 @@ class Thread extends Model
     {
         return $this->hasMany(Reply::class, 'threadId', 'id');
     }
+
+    public function reactions(): HasMany
+    {
+        return $this->hasMany(Reactions::class, 'threadId', 'id');
+    }
 }

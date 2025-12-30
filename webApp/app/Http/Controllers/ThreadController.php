@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 
+use App\Models\Reactions;
 use App\Models\Reply;
 use App\Models\Thread;
 use function Symfony\Component\Clock\now;
@@ -14,7 +15,7 @@ class ThreadController extends Controller
      */
     public function index()
     {
-        $threads = Thread::orderByDesc('created_at')->paginate(5);
+        $threads = Thread::withCount('reactions')->orderByDesc('created_at')->paginate(5);
         return view('threads.index', compact('threads'));
     }
 
@@ -88,11 +89,35 @@ class ThreadController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function react(Thread $thread)
+    public function react(string $threadId)
     {
-        $react['userId']   = Auth::id();
-        $react['threadId'] = $thread->id;
+        $userId = Auth::id();
 
-        Reply::create($react);
+        $thread = Thread::where('id', $threadId)->first();
+
+        if (! $thread) {
+            return response()->json([
+                'message' => 'Thread not found',
+            ], 404);
+        }
+
+        $reaction = Reactions::where('userId', $userId)
+            ->where('threadId', $threadId)
+            ->first();
+
+        if ($reaction) {
+            $reaction->delete();
+        } else {
+            Reactions::create([
+                'userId'   => $userId,
+                'threadId' => $threadId,
+            ]);
+        }
+
+        $count = Reactions::where('threadId', $threadId)->count();
+
+        return response()->json([
+            'count' => $count,
+        ]);
     }
 }
