@@ -17,8 +17,8 @@ Route::get('/login', [AuthController::class, 'loginView'])->name('login');
 Route::post('/login', [AuthController::class, 'login'])->name('auth.login');
 Route::get('/sign-up', [AuthController::class, 'registerView'])->name('register');
 Route::post('/sign-up', [AuthController::class, 'register'])->name('auth.register');
-Route::get('/otp-authentication', [AuthController::class, 'otpView'])->name('otp');
-Route::post('/otp-authentication', [AuthController::class, 'otp'])->name('auth.otp');
+Route::get('/otp-authentication', [AuthController::class, 'registerValidationView'])->name('register.validation');
+Route::post('/otp-authentication', [AuthController::class, 'registerValidation'])->name('auth.register.validation');
 Route::get('/create-account', [AuthController::class, 'accountView'])->name('account');
 Route::post('/create-account', [AuthController::class, 'account'])->name('auth.account');
 
@@ -36,10 +36,6 @@ Route::get('/threads/create', [ThreadController::class, 'create'])->middleware('
 Route::post('/threads', [ThreadController::class, 'store'])->middleware('auth')->name('thread.store');
 Route::post('/threads/{thread}/reply', [ThreadController::class, 'reply'])->middleware('auth')->name('thread.reply');
 // Route::post('/threads/{threadId}/reaction', [ThreadController::class, 'react'])->middleware('auth')->name('thread.react');
-
-Route::get('/sign-up', function () {
-    return view('auth/register');
-});
 
 Route::get('/forget-password', function () {
     return view('auth/forgetPass');
