@@ -8,7 +8,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @livewireStyles
     @stack('style')
-    @livewireScript
+    @livewireScripts
     @stack('script')
 </head>
 <body class="container-body @yield('bodyClass', '')">
