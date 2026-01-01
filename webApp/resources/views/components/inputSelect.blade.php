@@ -1,35 +1,21 @@
 @props([
-    'type' => 'text',
     'id',
     'name' => null,
     'icon' => null,
     'label' => null,
     'additionalInfo' => null,
     'isRequired' => true,
-    'placeholder' => null
+    'defaultOption' => null
 ])
-
-{{-- type checkbox dan radio --}}
 
 @php
     $name = $name ?? $id;
 
-    $baseStyle = 'w-full px-1.5 py-0.5 h-8 text-small border-b-2 rounded-md not-placeholder-shown:bg-accent-20/60 not-placeholder-shown:text-shadedOfGray-100 placeholder:text-micro placeholder:italic focus:border-secondary-happy-100 focus:border-b-2 focus:bg-secondary-happy-20/65 hover:bg-shadedOfGray-30/45 ease-in-out duration-125 md:text-body-size md:placeholder:text-small md:h-9';
+    $baseStyle = 'w-full px-1.5 py-0.5 h-8 text-small border-b-2 rounded-md text-shadedOfGray-60 italic focus:border-secondary-happy-100 focus:border-b-2 focus:bg-secondary-happy-20/65 hover:bg-shadedOfGray-30/45 ease-in-out duration-125 md:text-body-size md:h-9';
 
     $normalStyle = 'bg-shadedOfGray-20/50 border-shadedOfGray-50';
-    $errorStyle = 'bg-error-lighten/25 border-error-dark';
+    $errorStyle = 'error bg-error-lighten/25 border-error-dark';
     $conditionalStyle = ($errors->has($name)) ? $errorStyle : $normalStyle;
-    
-    $typeStyle = '';
-    switch ($type) {
-        case 'password':
-            $typeStyle = 'pr-8';
-            break;
-
-        default:
-            $typeStyle = '';
-            break;
-    }
 @endphp
 
 <div class='flex flex-col p-1 h-max mb-6 w-full'>
@@ -50,8 +36,7 @@
     @endisset
 
     <div class='relative'>
-        <input
-            type="{{ $type }}"
+        <select
             id="{{ $id }}"
             name="{{ $name }}"
             autocomplete="{{ ($attributes->has('autocomplete')) ? 'on' : 'off' }}"
@@ -59,9 +44,16 @@
                 placeholder="{{ $placeholder }}"
             @endisset
             {{ $attributes->merge([
-                'class' => $baseStyle . ' ' . $typeStyle . ' ' . $conditionalStyle
+                'class' => $baseStyle . ' ' . $conditionalStyle
             ]) }}
-        />
+        >
+            <option value="" disabled hidden {{ old($name) ? '' : 'selected' }}>
+                {{ ($defaultOption == null) ? $name : $defaultOption }}
+            </option>
+            @isset($options)
+                {{ $options }}
+            @endisset
+        </select>
         @isset($additionalContent)
             {{ $additionalContent }}
         @endisset

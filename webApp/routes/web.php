@@ -44,3 +44,7 @@ Route::get('/forget-password', function () {
 Route::get('/develop', function () {
     return view('components.input');
 });
+
+Route::get('/pageDevelop', function () {
+    return view('auth.otp');
+});

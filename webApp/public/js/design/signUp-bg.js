@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
         interactive: true,
         speed: 'fast',
         density: 'high',
-    };
+    };  
 
     new ParticleNetwork(canvasDiv, options);
 });

@@ -10,7 +10,7 @@
 
 
 @section('mainImage')
-    <img src="{{ asset('assets/icons/otp.svg') }}" alt="logo" class='w-24'>
+    <img src="{{ asset('assets/icons/otp.svg') }}" alt="logo" class='w-20'>
 @endsection
 
 
