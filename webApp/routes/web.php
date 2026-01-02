@@ -57,5 +57,5 @@ Route::prefix('threads')->middleware('auth')->group(function () {
 
 // Dev Route Preview
 Route::get('/pageDevelop', function () {
-    return view('auth.login');
+    return view('errors.403');
 });
