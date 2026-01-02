@@ -1,8 +1,8 @@
 <?php
 
+use App\Http\Controllers\Admin\SongController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MoodController;
-use App\Http\Controllers\SongController;
 use App\Http\Controllers\ThreadController;
 use Illuminate\Support\Facades\Route;
 
@@ -11,8 +11,10 @@ Route::get('/', function () {
 })->name('welcome');
 
 // Song Route
-Route::get('/songs/create', [SongController::class, 'create'])->name('songs.create');
-Route::get('/songs', [SongController::class, 'index'])->name('songs.index');
+Route::prefix('admin/songs')->middleware(['auth', 'role:1'])->group(function () {
+    Route::get('', [SongController::class, 'index'])->name('admin.songs.index');
+    Route::get('/create', [SongController::class, 'create'])->name('admin.songs.create');
+});
 
 // Auth Route
 Route::prefix('auth')->group(function () {

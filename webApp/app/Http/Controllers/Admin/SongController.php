@@ -1,6 +1,7 @@
 <?php
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class SongController extends Controller
@@ -10,7 +11,7 @@ class SongController extends Controller
      */
     public function index()
     {
-        return view('songs.index');
+        return view('admin.songs.index');
     }
 
     /**
@@ -18,7 +19,7 @@ class SongController extends Controller
      */
     public function create()
     {
-        return view("songs/create");
+        return view('admin.songs.create');
     }
 
     /**
