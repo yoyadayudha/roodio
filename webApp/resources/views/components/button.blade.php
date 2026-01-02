@@ -4,7 +4,7 @@
   'behaviour' => 'navigation', //action OR navigation
   'actionType' => 'button',
   'navLink' => null,
-  'content' => 'hallo ini button',
+  'content' => 'button',
   'mood' => null //happy, sad, relaxed, angry
 ])
 
