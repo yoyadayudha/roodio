@@ -81,7 +81,7 @@ class AuthController extends Controller
 
     public function registerValidationView()
     {
-        return view('auth.otp');
+        return view('auth.registerValidation');
     }
 
     public function registerValidation(Request $request, OtpController $otpController)
