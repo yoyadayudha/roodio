@@ -1,0 +1,1 @@
+<x-otp route='auth.user.verification'></x-otp>

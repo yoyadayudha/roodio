@@ -32,6 +32,30 @@ class AuthController extends Controller
         return back()->with('failed', 'Failed to login!');
     }
 
+    public function userVerificationView()
+    {
+        return view('auth.forgetPasswordValidation');
+    }
+
+    public function userVerification()
+    {
+        // the logic is not yet
+
+        return redirect()->route('forgetPassword');
+    }
+
+    public function forgetPasswordView()
+    {
+        return view('auth.forgetPassword');
+    }
+
+    public function forgetPassword()
+    {
+        //the logic is not yet
+
+        return redirect()->route('login');
+    }
+
     public function registerView()
     {
         $regions = Region::orderBy('id')->get();
@@ -57,7 +81,7 @@ class AuthController extends Controller
 
     public function registerValidationView()
     {
-        return view('auth.otp');
+        return view('auth.registerValidation');
     }
 
     public function registerValidation(Request $request, OtpController $otpController)
@@ -71,8 +95,8 @@ class AuthController extends Controller
         $request->validate([
             'otp' => 'required|digits:6',
         ], [
-            'otp.required' => 'OTP Code must be completed.',
-            'otp.digits'   => 'OTP COde must be 6 digit.',
+            'otp.required' => 'OTP code must be completed.',
+            'otp.digits'   => 'OTP code must be 6 digits.',
         ]);
 
         $session = session('register.step1');
