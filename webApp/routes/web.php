@@ -10,7 +10,7 @@ Route::get('/', function () {
     return view('errors.503');
 })->name('welcome');
 
-// Song Route 
+// Song Route
 Route::get('/songs/create', [SongController::class, 'create'])->name('songs.create');
 
 // Auth Route
@@ -22,10 +22,10 @@ Route::get('/forget-pasword', [AuthController::class, 'forgetPasswordView'])->na
 Route::post('/forget-password', [AuthController::class, 'forgetPassword'])->name('auth.forgetPassword');
 Route::get('/sign-up', [AuthController::class, 'registerView'])->name('register');
 Route::post('/sign-up', [AuthController::class, 'register'])->name('auth.register');
-Route::get('/otp-authentication', [AuthController::class, 'registerValidationView'])->name('register.validation');
-Route::post('/otp-authentication', [AuthController::class, 'registerValidation'])->name('auth.register.validation');
-Route::get('/create-account', [AuthController::class, 'accountView'])->name('account');
-Route::post('/create-account', [AuthController::class, 'account'])->name('auth.account');
+Route::get('/otp-authentication', [AuthController::class, 'registerValidationView'])->name('register.validation')->middleware('register.step:otp');
+Route::post('/otp-authentication', [AuthController::class, 'registerValidation'])->name('auth.register.validation')->middleware('register.step:otp');
+Route::get('/create-account', [AuthController::class, 'accountView'])->name('account')->middleware('register.step:account');
+Route::post('/create-account', [AuthController::class, 'account'])->name('auth.account')->middleware('register.step:account');
 
 // Mood Route
 Route::get('/moods', [MoodController::class, 'index'])->name('moods.index');
