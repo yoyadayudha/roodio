@@ -60,5 +60,5 @@ Route::prefix('threads')->middleware('auth')->group(function () {
 
 // Dev Route Preview
 Route::get('/pageDevelop', function () {
-    return view('components.navbarButton');
+    return view('components.sidebarButton');
 });

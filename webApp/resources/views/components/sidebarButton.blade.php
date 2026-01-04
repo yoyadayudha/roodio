@@ -1,3 +1,5 @@
+@vite(['resources/css/app.css', 'resources/js/app.js'])
+
 @props([
     'route' => 'welcome',
     'icon' => 'home',
@@ -78,7 +80,7 @@
 
 <a href="{{ route($route) }}" class="{{ ($isActive) ? '' : 'group' }} inline-block" style="{{ ($isActive) ? 'pointer-events: none;' : '' }}">
     @if (!$isToggle)
-        <div class="relative overflow-hidden font-secondaryAndButton {{ ($isActive) ? 'w-fit' : 'w-xs lg:w-sm' }}">
+        <div class="relative font-secondaryAndButton w-fit">
             <div
                 {{ $attributes->merge([
                     'class' => 'w-18 h-18 p-3 relative z-10 flex flex-col items-center justify-center group-hover:border-y duration-100 lg:w-20 lg:h-20 ' . $iconContainerStyle[$mood] . ' ' . (($isActive) ? $iconContainerActiveStyle[$mood] . ' border-r-4' : ' bg-primary-85')
