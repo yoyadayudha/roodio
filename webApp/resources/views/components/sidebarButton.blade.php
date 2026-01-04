@@ -1,8 +1,8 @@
 @props([
     'route' => 'welcome',
-    'icon' => 'home',
-    'isToggle' => false,
-    'mood' => "happy",
+    'icon',
+    'isToggle',
+    'mood',
     'isActive' => false,
     'label' => 'label',
     'content' => 'this is content'
@@ -10,6 +10,8 @@
 
 
 @php
+    $isActive = request()->routeIs($route);
+
     $iconContainerStyle = [
         'happy' => 'group-hover:bg-secondary-happy-10 group-hover:border-y-secondary-happy-100',
         'sad' => 'group-hover:bg-secondary-sad-10 group-hover:border-y-secondary-sad-100',
@@ -81,7 +83,7 @@
         <div class="relative font-secondaryAndButton w-fit">
             <div
                 {{ $attributes->merge([
-                    'class' => 'w-18 h-18 p-3 relative z-10 flex flex-col items-center justify-center group-hover:border-y duration-100 lg:w-20 lg:h-20 ' . $iconContainerStyle[$mood] . ' ' . (($isActive) ? $iconContainerActiveStyle[$mood] . ' border-r-4' : ' bg-primary-85')
+                    'class' => 'w-18 h-18 p-3 relative z-10 flex flex-col items-center justify-center group-hover:border-y-2 duration-100 lg:w-20 lg:h-20 ' . $iconContainerStyle[$mood] . ' ' . (($isActive) ? $iconContainerActiveStyle[$mood] . ' border-r-4' : ' bg-primary-85')
                 ]) }}
             >
                 <div 
@@ -123,7 +125,7 @@
         <div
         {{ 
             $attributes->merge([
-                "class" => 'rounded-md w-40 py-2 px-4 overflow-hidden flex flex-row items-center justify-start gap-3 font-secondaryAndButton duration-125 lg:w-44 ' . (($isActive) ? $backgroundToggleActiveStyle[$mood] : $backgroundToggleStyle[$mood]) . ' '
+                "class" => 'rounded-md w-42 py-2 px-4 overflow-hidden flex flex-row items-center justify-start gap-3 font-secondaryAndButton duration-125 lg:w-48 ' . (($isActive) ? $backgroundToggleActiveStyle[$mood] : $backgroundToggleStyle[$mood]) . ' '
             ])
         }}
         >

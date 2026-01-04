@@ -60,5 +60,5 @@ Route::prefix('threads')->middleware('auth')->group(function () {
 
 // Dev Route Preview
 Route::get('/pageDevelop', function () {
-    return view('components.sidebarButton');
-});
+    return view('components.sidebar');
+})->name('awikwok');
