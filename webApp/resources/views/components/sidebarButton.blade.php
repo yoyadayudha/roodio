@@ -8,6 +8,7 @@
     'content' => 'this is content'
 ])
 
+
 @php
     $iconContainerStyle = [
         'happy' => 'group-hover:bg-secondary-happy-10 group-hover:border-y-secondary-happy-100',
@@ -73,8 +74,6 @@
         'angry' => 'border-2 border-secondary-angry-85 bg-secondary-angry-20'
     ];
 @endphp
-
-
 
 
 <a href="{{ route($route) }}" class="{{ ($isActive) ? '' : 'group' }} inline-block" style="{{ ($isActive) ? 'pointer-events: none;' : '' }}">
